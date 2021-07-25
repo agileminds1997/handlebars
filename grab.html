@@ -1,0 +1,86 @@
+<!doctype HTML>
+<html>
+    <head>
+          <title>ERIK HTML to JSON submit</title>
+          <link rel="shortcut icon" href="/airmail.jpg" />
+          <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+          <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+          <link rel="stylesheet" type="text/css" href="iframe.css">
+          <!-- Bootstrap and FontAwesome -->
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        </head>
+        <body>
+            <div class="container">
+               <div class="row">
+                 <div class="col-lg-6 col-md-6">     
+                   <div class="fhoopla">
+                      <iframe src="/gradient.html" name="myIframe" id="myIframe"></iframe>    
+                   </div>
+                  </div>
+
+                <div class="col-lg-6 col-md-6">
+                <div class="fmajor">
+                    <h1>Form</h1>
+                    <form id="myForm" method="post" action= "accept.php" target="myIframe">
+
+                    <input name="booking_id" TYPE="HIDDEN" VALUE="<?=uniqid() ?>">
+                    <input autocomplete="off" type="hidden" name="authenticity_token" value="" />
+                    <h2 class="page-title">Make an Enquiry</h2>
+                  
+                    <input autocomplete="off" value="1" type="hidden" name="booking_autocorrect_domain" id="booking_autocorrect_domain" />
+
+                  <div class="form-group">
+                    <label class="form-label" for="booking_name">Your Name</label>
+                    <div class="input-group">
+                       <div class="input-group-addon">
+                          <i class="fa fa-phone-square-alt"></i>
+                       </div>
+                        <input autocomplete="off" maxlength="50" class="form-control" type="text" name="booking_name" id="booking_name" />      
+                     </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label" for="dog_name">Dog Name</label>
+                    <input autocomplete="off" maxlength="30" class="form-control" type="text" name="dog_name" id="dog_name" />
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label" for="booking_name">Dog Breed</label>
+                    <input autocomplete="off" maxlength="100" class="form-control" type="text" name="dog_breed" id="dog_breed" />
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label" for="booking_email">Email address</label>
+                    <input autocomplete="off" type="email" class="form-control" name="booking_email" id="booking_email" />
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label" for="booking_phone">Phone Number</label>
+                    <input autocomplete="off" type="phone" class="form-control" name="booking_phone" id="booking_phone" />
+                  </div>
+
+                  <select autocomplete="off" multiple class="form-control" name="booking_service[]" id="booking_service">
+                      <option value="s01">Wash and Dry</option>
+                      <option value="s02">Nail Clipping</option>
+                      <option value="s03">Full Grooming</option>
+                      <option value="s04">Puppy Packages</option>
+                      <option value="s05">Hydrobathing</option>
+                    </select>
+
+                    <input type = "hidden" name="token" value=""><br>
+                    <input type = "hidden" name="authcode" value= "GOLIATH"><br>
+
+                    <div>
+                    <button class="btn btn-lg btn-primary" type="submit">Go</button>
+                    </div>
+                </form>
+                
+                </div>
+            </div>
+        </div>
+
+     </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="project01.css">
+</head>
+	<body>
+		
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>		
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.0/handlebars.min.js"></script>		
+		<script id="handlebars-demo" type="text/x-handlebars-template">
+					<div>
+						Thank you for your Enquiry<br>Booking Number {{booking_id}}. 
+					</div>
+
+					{{#if booking_service}}
+					  <div class="summary">
+					  	<h3>We will now propose to you:</h3>
+					  {{#each booking_service}}
+					  <div class="tableline">{{sname this}} at £{{price this}}</div>
+					  {{/each}}
+				      <div class="subtotal"><b>Sub Total:</b> £{{subtotal booking_service}}</div>
+				      <div class="totalvat"><b>Total:</b> £{{totalvat (subtotal booking_service) }}</div>
+						</div>
+
+				<h2>Services</h2>
+				{{#each services}}
+				{{this.quantum}} of {{sname this.name}} = 
+				{{totalprice this}}<br>
+				{{/each}}
+
+				<h2>Doggo Services</h2>
+				{{#each doggo_service}}
+				{{tpain this}}<br>
+				{{/each}}
+
+				<div class="services">
+					  {{#each services}}
+				      <div class="pricing-table">
+				        <h3 class="pricing-title">{{sname this.name}}</h3>
+				        <h3>{{this.quantum}}</h3>
+				        <div class="price">£{{totalprice this}}</div>
+				        <ul class="table-list">
+				        {{#each this.price}}
+				          <li>{{this}} <span>£{{this}}</span></li>
+				          {{/each}}
+				        </ul>
+				        <div class="table-buy">
+				          <p>Available March 1st 2021</p>
+				        </div>
+				      </div>
+					  {{/each}}
+					</div>
+
+					{{else}}
+					  No services selected
+					{{/if}}
+
+		</script>
+		<script src="project01.js"></script>
+
+	</body>
+</html>
